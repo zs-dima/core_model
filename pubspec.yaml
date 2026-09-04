@@ -1,0 +1,39 @@
+# ignore: prefer-publish-to-none, this package is published.
+name: core_model
+description: "Shared primitives with no Flutter dependency: a monotonic ownership lease, a cancellation token and a retry backoff."
+
+version: 0.1.0
+
+homepage: https://github.com/zs-dima/core_model
+repository: https://github.com/zs-dima/core_model
+issue_tracker: https://github.com/zs-dima/core_model/issues
+
+topics:
+  - lease
+  - cancellation
+  - backoff
+  - retry
+  - primitives
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  # Annotations only (`@immutable`, `@visibleForTesting`).
+  meta: ^1.16.0
+
+dev_dependencies:
+  test: ^1.25.0
+
+  lints_tool:
+    git:
+      url: https://github.com/zs-dima/lints_tool.git
+      ref: v1.0.1
