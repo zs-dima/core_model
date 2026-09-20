@@ -2,7 +2,7 @@
 name: core_model
 description: "Shared primitives with no Flutter dependency: an ownership lease, a cancellation token, a retry backoff, an injectable clock and staged-initialization timings."
 
-version: 0.1.0
+version: 0.1.1
 
 homepage: https://github.com/zs-dima/core_model
 repository: https://github.com/zs-dima/core_model
