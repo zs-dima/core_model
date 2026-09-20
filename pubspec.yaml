@@ -1,6 +1,6 @@
 # ignore: prefer-publish-to-none, this package is published.
 name: core_model
-description: "Shared primitives with no Flutter dependency: a monotonic ownership lease, a cancellation token and a retry backoff."
+description: "Shared primitives with no Flutter dependency: an ownership lease, a cancellation token, a retry backoff, an injectable clock and staged-initialization timings."
 
 version: 0.1.0
 
@@ -24,7 +24,7 @@ platforms:
   windows:
 
 environment:
-  sdk: ^3.13.2
+  sdk: ^3.13.4
 
 dependencies:
   # Annotations only (`@immutable`, `@visibleForTesting`).
@@ -33,4 +33,4 @@ dependencies:
 dev_dependencies:
   test: ^1.25.0
 
-  lints_tool: ^1.0.1
+  lints_tool: ^1.1.1

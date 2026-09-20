@@ -52,9 +52,17 @@ class CancelToken {
   void Function() link(CancelToken child) {
     if (isCancelled) {
       child.cancel(_reason);
+      // Nothing to detach: the contract is a callback, and for an already-cancelled parent the
+      // correct one does nothing.
+      // ignore: no-empty-block
       return () {};
     }
-    (_children ??= <CancelToken>{}).add(child);
+    final children = _children;
+    if (children == null) {
+      _children = <CancelToken>{child};
+    } else {
+      children.add(child);
+    }
     return () => _children?.remove(child);
   }
 }

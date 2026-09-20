@@ -1,3 +1,6 @@
+// The seed IS the test: the range assertions have to be reproducible and one case asserts that two
+// runs of the same seed agree. `Random.secure()` would make that assertion false by construction.
+// ignore_for_file: prefer-random-secure
 import 'dart:math' as math;
 
 import 'package:core_model/core_model.dart';

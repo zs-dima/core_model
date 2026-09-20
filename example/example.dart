@@ -2,6 +2,8 @@
 // point rather than a duplicated initializer.
 // ignore_for_file: avoid-duplicate-initializers
 // ignore_for_file: avoid_print
+// A seeded PRNG so the printed schedule is reproducible; nothing here is a secret.
+// ignore_for_file: prefer-random-secure
 
 import 'dart:async';
 import 'dart:math';
@@ -35,4 +37,9 @@ Future<void> main() async {
     elapsed += delay;
     print('attempt $attempt after ${delay.inMilliseconds} ms');
   }
+
+  // Clock: the current instant as a dependency, so a test can hand the code one the calendar has
+  // not reached. `SystemClock` is the real one, and it reads UTC.
+  const clock = SystemClock();
+  print('now (UTC): ${clock.now().toIso8601String()}');
 }
